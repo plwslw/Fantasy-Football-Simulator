@@ -1,0 +1,151 @@
+﻿Steven Litvack-Winkler and Julius Freyra (Period 10)
+
+
+Description:
+Our project is to create a simulator for fantasy sports leagues. The project will include a snake-style draft in which they take turns picking players for their team, inter-user trading, matchups between users, and a scoring system. The goal for every user is to gain the most wins with the team they have selected. Potential usages for this project could be to observe and study user behavior, enhance fantasy sports league management skills without risking money, or to just play a game with some friends.
+
+
+Usage:
+Using the local version of this simulator, the users will run a simulation server in the background and run client executables in separate terminal tabs in their own part of the screen or run one multi-client executable and play the game when it is their turn and the server gives them the go-ahead. 
+
+
+Using the networked version of this simulator, the users will run a simulation server on one computer while each user runs a client executable on their own machine. The clients will connect to the server and the simulation will begin as soon as a user joins the simulation. This will allow users will be able to join dynamically as one screen and keyboard for multiple users may become too crowded.
+
+
+The project will be designed to run from a shell. There would be commands depending on what stage the user is in
+* In the lobby (if the user does not already have a team)
+   * Create a league (only one league in local version, multiple in networked version)
+   * View available leagues
+   * Join a league
+   * Add AI teams to a league you are in (possibly only available to the team that created the league)
+* In a draft
+   * View available players
+   * View the pick order
+   * Draft a player
+* In an already drafted league
+   * View lineup
+   * View matchup
+   * Swap the positions of two players (i.e. swap someone on the bench with someone in the lineup)
+   * View the records of all the teams in the league
+
+
+The aim of the users is to win in their league and possibly other leagues they join. 
+
+
+Technical Design:
+Topics discussed and possible uses in the project:
+1. Memory Allocation:
+* Server can allocate memory to contain important information locally about users as they join the game so it does not need to access a file and read data, parse it, and send out data to clients as often which would slow down speed
+1. Interaction with Files:
+* Data about users, their wins and losses, and users’ teams can be stored in files and accessed by the server to send out to clients or each client creates their own files and accesses their data by themselves
+1. Using Information about Files:
+2. Processes:
+* On the local version, different clients will run with a server that forks and creates a connection
+1. Signals:
+2. Pipes:
+* On the local version, users will connect to the server through pipes
+1. Shared Memory, Semaphores:
+                Local version:
+* Shared memory may be used to determine who is currently picking in a draft without having the server update information and send the new data to all clients
+                Networked version:
+* Semaphores can be used to prevent too many connections to the main well known pipe and control the flow of new users joining the simulation
+1. Networking:
+* users can play on their own machines after connecting to a server
+
+
+Steven will be in charge of gameplay design and setting up the game inside the server
+Julius will be in charge of connections, information storage, information distribution and efficiency
+Both will help the other finish certain parts of the simulation and code as needed and begged for by the timeline
+
+
+Data Structures:
+* Structs within the server to store often-accessed, important information about each user
+* An array to store information about players, their statistics (including “skill levels”); store information about teams (which players are in which positions)
+* Circular linked list to function as a guide for the user draft pick order
+
+
+
+
+
+
+
+
+
+
+Tentative Timeline:
+* Local Version
+   * Server/Client Connection
+      * Allows user to create a league and enter teams into a league.
+      * Goal to finish by 1/9
+   * Create player and drafting system
+      * Players would be a csv file of players
+      * Drafting would import the csv to create a set of struct players
+      * Allows a league to run a draft, initializing the teams so that matchups can begin
+      * Goal to finish the backend of the drafting system by 1/10 [the backend is the same as the networked version] and the user interface by 1/12 
+   * Create Matchup system
+      * Generates point values for all of the players in the league.
+      * Pits players against each other and calculates winners
+      * Updates user info (statistics)
+      * Updates league info (user standings)
+      * All of the matchup system should work the same on the networked version.
+      * Goal to finish by 1/13
+   * Front end for matchup
+      * Let user view the results of last weeks matchup or a matchup from any past week
+      * Displays a list of players on each team, and the points they scored that week. Also displays the total score of each team. 
+      * Goal to finish by 1/16
+   * Trades 
+      * Create, view, and accept/reject trades
+      * Also, this might be a good time to create a function that displays the teams of every user.
+      * Goal to complete trade creation by 1/18 and responding to trades by 1/19
+   * Other front end stuff
+      * View your team
+      * Goal to complete by 1/20
+* Networked Version
+   * Drafting front end
+      * Goal to complete by 1/21
+   * Trading front end
+      * Goal to complete by 1/22
+   * Other front end 
+      * Goal to Complete by 1/23
+* 1/24 through due date
+   * Testing the project
+   * Buffer time, if we fall behind schedule
+   * Implementation of stretch features
+
+
+Our proposal is to create a tool for managing fantasy sports leagues. Key features we want to include are
+* A snake-style draft in which they take turns picking players to their team
+* Proposing a trade with another player
+* An interface for viewing and rejecting/accepting proposed trades
+* Matchups between players as well as a scoring system
+
+
+We want start with a local version and then move on to a network version.
+Additional features that we might also add if we have time are
+* Setting players into certain positions or placing them on the bench [as opposed to every player’s score counts toward every weeks matchup]
+* Changing the positions of players in between games
+* A playoff system
+* Auto drafting
+* Alternate draft styles such as an auction draft
+* Invite other users to join your league [network version only]
+* Read an extended description of a player, including their scores in every past week.
+
+
+To keep things simple we might not use actual sports players or actual sports data. Instead we could just make up a list of players and simulate games (or even simpler, just individual performances). This would also allow one to see all of the project features in a reasonable time frame.
+
+
+The procedure for creating a league could work like this.
+1. There is a database server with information like a list of player
+2. A client connects to the server, and engages in a forking-handshake procedure to create its own version of the server with that client given a team in the new league.
+3. That team could then invite other players to join its league. Also possibly the parent server could have a link to the new server and players accessing the parent server could also join the new league. If these options fail then AI teams can be created
+4. When the league is full, a draft can begin (or be scheduled for the future)
+
+
+Draft Procedure
+1. Randomly determine a draft order
+2. Display list of available players to drafting user
+3. The drafting user can ask for more info about individual players or make a selection
+4. Repeat 2,3 until all teams are full[a][b]
+[a]what stops players from only picking the top players. ie why do we need around a 100 players if only 11*#of players or so are going to be drafted
+[b]In real life, no one knows for sure who the best players will be in advance, so we could obscure the info available to the user. 
+Also, I don't know if we'll have time to implement this but we could have a waiver system where players that weren't drafted could be added to a team later in the season for free (or at the cost of dropping a different player on their team, because the teams have a max size). I might add waivers as a stretch goal.
