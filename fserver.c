@@ -15,7 +15,7 @@ int main() {
     
   while (1) {
 
-    from_client = server_handshake1( buffer );    
+    from_client = server_handshake1(*buffer);    
 
     int f = fork();
     if ( f == 0 ) {
