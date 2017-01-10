@@ -27,4 +27,19 @@ int server_handshake(int* a){
   return private;
 }
 
+int server_handshake1(char* buffer, int* a){
+  mkfifo("pipe1", 0644);
+  int client = open("pipe1", O_RDONLY);
+  *a = client;
+  read(client, buffer, 7);
+  remove("pipe1");
+  return 0;
+}
 
+
+int server_handshake2(char* buffer, int client){
+  int private = open(buffer, O_WRONLY);
+  write(private, "hi", 3);
+  read(client, buffer, 6);
+  return private;
+}

@@ -1,4 +1,4 @@
-all: pipe_networking fserver client
+all: make
 
 pipe_networking: pipe_networking.c 
 	gcc -c pipe_networking.c 
@@ -9,7 +9,12 @@ fserver: fserver.c
 client: client.c
 	gcc -c client.c
 
-make: pipe_networking.o fserver.o client.o
+binaries: pipe_networking fserver client
 	gcc pipe_networking.o fserver.o -o fserver
 	gcc pipe_networking.o client.o -o client
 
+clean:
+	*.o
+	client
+	fserver
+	pipe1
