@@ -60,6 +60,12 @@ void sub_server( int from_client, int to_client ) {
 
   printf("Welcome to league %d. \n", getpid() );
   printf("If you would like to create your own league instead");//Show league_node list
+  printf("List of available leagues. \n");
+  cur=root;
+  while (cur->next){
+    cur=cur->next;
+    printf("League #%d", cur->pid);
+  }
   
   char buffer[MESSAGE_BUFFER_SIZE];
   while (read( from_client, buffer, sizeof(buffer) )) {

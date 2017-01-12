@@ -20,7 +20,8 @@ int main() {
     printf("enter message: ");
     fgets( buffer, sizeof(buffer), stdin );
     char *p = strchr(buffer, '\n');
-    *p = 0;  
+    *p = 0;
+    
     write( to_server, buffer, sizeof(buffer) );
   }
   
