@@ -1,0 +1,7 @@
+*leagues.csv -> list of leagues
+--<#League ID, name (stretch), max teams, cur teams, in_progress (is it joinable) >
+league id - counter
+
+league17 folder -> league
+
+read/write to the csv
