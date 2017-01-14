@@ -1,10 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include "uthash.h"
+#ifndef FSERVER
+#define FSERVER 0
+
+//#include "uthash.h"
 
 #include "pipe_networking.h"
+#include "accounts.h"
 
 void sub_server( int from_client, int to_client );
 
@@ -16,8 +16,9 @@ struct league_node{
 
 typedef user struct user{
   char *username;
-  char *password;
+  //char *password;
   league_node root;
   //UT_hash_handle hh;
 };
 
+#endif
