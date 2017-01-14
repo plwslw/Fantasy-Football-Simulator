@@ -2,7 +2,11 @@
 1/9/16, 3:00 PM: uploading vanilla version of server, client, fserver. Working on makefile and adapting fserver.
 1/10/16, 12:12 AM: fserver and client both connect and work, will need to optimize for gameplay. Cleaned up makefile
 1/11/16, 10:00 PM:
-	Changing server to allow client to create a league
-	makefile compiles and has target for pipe_networking.h
-	pipe_networking.h has an ifndef endif loop
-	increased message buffer size
+	 Changing server to allow client to create a league
+	 makefile compiles and has target for pipe_networking.h
+	 pipe_networking.h has an ifndef endif loop
+	 increased message buffer size
+
+1/13/16, 3:35 PM: Outline login/Account system
+
+1/14/17, 4:30 pm: finished the login/Account system. Not tested.
