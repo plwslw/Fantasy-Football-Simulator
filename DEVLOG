@@ -10,3 +10,31 @@
 1/13/16, 3:35 PM: Outline login/Account system
 
 1/14/17, 4:30 pm: finished the login/Account system. Not tested.
+
+1/15/17, 12:39 AM: attempted to debug login/account system, code was littered with issues and errors. - Julius
+	 Fixed:
+		makefile
+		header files and inclusion
+		syntax errors
+		compiler errors
+		minor UI errors		
+
+	 Changed:
+		
+		accounts.c
+		accounts.h
+		fserver.c
+		fserver.h
+		client.c
+
+		method by which we open and read a file and strsep through it (fixed but not tested as the program would not advance)
+		       affects: check_repeated_username(), login()
+		commented out main() of client.c during testing, did not uncomment
+		touched users.csv, did not look into interactivity with it (not tested as the program would not advance)
+
+	 Problems that persist:
+	     	issues with connection between components
+		check_repeated_username does not complete fopen nor does it trigger error: Steven I think youre using fopen incorrectly
+		the user interface is not displayed client-side, is displayed server-side (!!!)
+
+	 Most of my time was devoted to fixing the syntax and compiler errors, only made minor progress with actual new code

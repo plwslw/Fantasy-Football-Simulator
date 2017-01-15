@@ -8,17 +8,17 @@
 
 void sub_server( int from_client, int to_client );
 
-struct league_node{
+typedef struct league_node{
   int league_id;
-  league_node *next;
+  struct league_node *next;
   char *User_team_name;
-};
+} league_node;
 
-typedef user struct user{
+typedef struct user{
   char *username;
   //char *password;
   league_node root;
   //UT_hash_handle hh;
-};
+} user;
 
 #endif

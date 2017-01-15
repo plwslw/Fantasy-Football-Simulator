@@ -1,27 +1,27 @@
+#include "accounts.h"
+
 int errorCheck(int x){
   if (x == -1) printf("An error occured: [%s]\n",strerror(errno));
-  return x;
+  createAccount();
 }   
 
-char* getUsername(){
-  char[32] = username;
-  fgets(username, sizeof(username), stdin);    
-  return username;
-}
-
-char* getPassword(){
-  return getUsername();
+char* getInput(){
+  char input[32];
+  fgets(input, sizeof(input), stdin); // includes newline must remove
+  return input;
 }
 
 void createAccount(){
+  char* username;
+  char* password;
   while(1){
     printf("\n enter a username of at most 32 characters: ");
-    char* username = getUsername();
+    char* username = getInput();
     
     printf("\n enter a password of at most 32 characters: ");    
-    char* password = getPassword();
+    char* password = getInput();
     
-    if (strlen(username) == 0 || strlen(password) > 0){
+    if (strlen(username) == 0 || strlen(password) == 0){
       printf("\nYour username or password was empty\n");
       continue;
     }
@@ -30,7 +30,7 @@ void createAccount(){
       printf("\nYour username is already in use. Pick a different one\n");
       continue;
     }
-
+    
     break;
   }
 
@@ -39,7 +39,7 @@ void createAccount(){
 }
 
 void createUser(char* username, char* password){
-  int fd = open("users.csv", O_CREAT, O_WRONLY, O_APPEND);
+  int fd = open("users.csv", O_WRONLY, O_APPEND);
   errorCheck(fd);
   errorCheck (write(fd, username, strlen(username)));
   errorCheck (write(fd, ",", 1));
@@ -50,11 +50,23 @@ void createUser(char* username, char* password){
 
 //Returns 1 if username is already in use, 0 otherwise
 int check_repeated_username(char * name){
-  FILE* file = errorCheck( fopen("users.csv", "r"));
-  char line[256];
-  while (fgets(line, sizeof(line), file) != NULL){
-    char* usedName = strsep(line, ",");
+  // dont use error check, fopen returns NULL on fail
+  FILE* file = fopen("users.csv", "r");
+  printf("\n\nmade it\n\n"); // debug line remove when done -- Julius gave up cleaning/debugging here 2017/01/15 00:39
+  if(!file){
+    printf("An error occured: users.csv cannot be opened\n");
+    createAccount();
+  }
+  fseek(file, 0L, SEEK_END);
+  int size = (int)ftell(file);
+  rewind(file);
+  char* users;
+  fgets(users, size, file);
+  char* line = strsep(&users,"\n");
+  while(line){
+    char* usedName = strsep(&line, ",");
     if (!strcmp(usedName, name)) return 1;
+    char* line = strsep(&users,"\n");
   }
   return 0;
 }  
@@ -63,18 +75,28 @@ int check_repeated_username(char * name){
 user* login(){
   while(1){
     printf("\n Enter your username");
-    getUsername();
+    char* username = getInput();
 
     printf("\n Enter your password. ");    
-    getPassword();
+    char* password = getInput();
 
     //check if username exist and if username matches the password
-    FILE* file = errorCheck( fopen("users.csv", "r"));
-    char line[256];
-    while (fgets(line, sizeof(line), file) != NULL){
-      char* curName = strsep(line, ",");
-      if (!strcmp(curName, username)){//usernames match
-	if (!strcmp( password, strsep(line, ","))){
+    // dont use error check, fopen returns NULL on fail
+    FILE* file = fopen("users.csv", "r");
+    if(!file){
+      printf("An error occured: users.csv cannot be opened\n");
+      createAccount();
+    }
+    fseek(file, 0L, SEEK_END);
+    int size = (int)ftell(file);
+    rewind(file);
+    char* users;
+    fgets(users, size, file);
+    char* line = strsep(&users,"\n");
+    while(line){
+      char* curName = strsep(&line, ",");
+      if (!strcmp(curName, username)){
+	if (!strcmp( password, strsep(&line, ","))){
 	  //login. Need to return a user struct
 	}
 	else{
@@ -83,6 +105,7 @@ user* login(){
 	  break;
 	}
       }
+      char* line = strsep(&users,"\n");
     }
   }
 }
@@ -91,16 +114,16 @@ void greeting(){
   printf("Welcome to our project. \n");
 
   while(1){
-    char[10] = s;
+    char* s;
     printf("Do you already have an account. (y/n): ");
-    fgets(s, sizeof(s), stdin);
+    fgets(s, 10, stdin);
     lowercase(s);
-    if (!strncmp(s, "y", 10) | strncmp(s, "yes", 10)){
+    if (!strncmp(s,"y",1) | !strncmp(s,"yes",3)){
       login();
       break;
     }
 
-    else if (!strncmp(s, "n", 10) | strncmp(s, "no", 10)){
+    else if (!strncmp(s,"n",1) | !strncmp(s,"no",2)){
       createAccount();
       break;
     }
@@ -114,7 +137,7 @@ void greeting(){
 
 }
 
-void lowercase(char *s){
+void lowercase(char *p){
   for( ; *p; ++p) *p = tolower(*p); //This line from StackOverflow
 }
 

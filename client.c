@@ -14,15 +14,17 @@ int main() {
   char buffer[MESSAGE_BUFFER_SIZE];
 
   while(1){
-    read( from_server, buffer, sizeof(buffer) );
-    printf( "received: %s\n", buffer );
     
-    printf("enter message: ");
-    fgets( buffer, sizeof(buffer), stdin );
-    char *p = strchr(buffer, '\n');
-    *p = 0;
+    /* read( from_server, buffer, sizeof(buffer) ); */
+    /* printf( "received: %s\n", buffer ); */
     
-    write( to_server, buffer, sizeof(buffer) );
+    /* printf("enter message: "); */
+    /* fgets( buffer, sizeof(buffer), stdin ); */
+    /* char *p = strchr(buffer, '\n'); */
+    /* *p = 0; */
+    
+    /* write( to_server, buffer, sizeof(buffer) ); */
+    
   }
   
   return 0;

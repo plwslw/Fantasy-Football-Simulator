@@ -12,13 +12,13 @@ client: client.c
 account: accounts.c accounts.h
 	gcc -c accounts.c
 
-binaries: pipe_networking fserver client
+binaries: pipe_networking fserver client account
 	gcc accounts.o pipe_networking.o fserver.o -o fserver
 	gcc pipe_networking.o client.o -o client
 
 clean:
 	rm *.o
-	rm *~
 	rm client
 	rm fserver
 	rm pipe1
+	rm *~
