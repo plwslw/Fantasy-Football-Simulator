@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
-#include <types.h>
-#include <stat.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <errno.h>
 
 void open_account_files();

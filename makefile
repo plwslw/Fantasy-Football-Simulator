@@ -13,7 +13,7 @@ account: accounts.c accounts.h
 	gcc -c accounts.c
 
 binaries: pipe_networking fserver client
-	gcc pipe_networking.o fserver.o -o fserver
+	gcc accounts.o pipe_networking.o fserver.o -o fserver
 	gcc pipe_networking.o client.o -o client
 
 clean:
