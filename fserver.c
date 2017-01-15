@@ -1,3 +1,4 @@
+#include "fserver.h"
 
 int main() {
   
@@ -23,14 +24,14 @@ int main() {
   return 0;
 }
 
-  void sub_server( int from_client, int to_client ) {
-    open_account_files();
-    greeting();
+void sub_server( int from_client, int to_client ) {
+  open_account_files();
+  greeting();
 
   
-  }
+}
 
-  void process( char * s ) {
-    //-------------
-  }
+void process( char * s ) {
+  //-------------
+}
 
