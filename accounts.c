@@ -1,13 +1,16 @@
 #include "accounts.h"
 
 int errorCheck(int x){
-  if (x == -1) printf("An error occured: [%s]\n",strerror(errno));
-  createAccount();
+  if (x == -1){
+    printf("An error occured: [%s]\n",strerror(errno));
+    exit(0);
+  }
 }   
 
 char* getInput(){
-  char input[32];
+  char* input = (char*)malloc(32);
   fgets(input, sizeof(input), stdin); // includes newline must remove
+  strtok(input,"\n");
   return input;
 }
 
@@ -16,10 +19,10 @@ void createAccount(){
   char* password;
   while(1){
     printf("\n enter a username of at most 32 characters: ");
-    char* username = getInput();
+    username = getInput();
     
     printf("\n enter a password of at most 32 characters: ");    
-    char* password = getInput();
+    password = getInput();
     
     if (strlen(username) == 0 || strlen(password) == 0){
       printf("\nYour username or password was empty\n");
@@ -51,8 +54,7 @@ void createUser(char* username, char* password){
 //Returns 1 if username is already in use, 0 otherwise
 int check_repeated_username(char * name){
   // dont use error check, fopen returns NULL on fail
-  FILE* file = fopen("users.csv", "r");
-  printf("\n\nmade it\n\n"); // debug line remove when done -- Julius gave up cleaning/debugging here 2017/01/15 00:39
+  FILE* file = fopen("users.csv", "a+");
   if(!file){
     printf("An error occured: users.csv cannot be opened\n");
     createAccount();
@@ -74,15 +76,15 @@ int check_repeated_username(char * name){
 //returns a struct of the user
 user* login(){
   while(1){
-    printf("\n Enter your username");
+    printf("\nEnter your username: ");
     char* username = getInput();
 
-    printf("\n Enter your password. ");    
+    printf("\nEnter your password: ");    
     char* password = getInput();
 
     //check if username exist and if username matches the password
     // dont use error check, fopen returns NULL on fail
-    FILE* file = fopen("users.csv", "r");
+    FILE* file = fopen("users.csv", "a+");
     if(!file){
       printf("An error occured: users.csv cannot be opened\n");
       createAccount();
@@ -97,6 +99,8 @@ user* login(){
       char* curName = strsep(&line, ",");
       if (!strcmp(curName, username)){
 	if (!strcmp( password, strsep(&line, ","))){
+	  printf("\n\nmade it\n\n");
+	  exit(0);
 	  //login. Need to return a user struct
 	}
 	else{
@@ -125,6 +129,7 @@ void greeting(){
 
     else if (!strncmp(s,"n",1) | !strncmp(s,"no",2)){
       createAccount();
+      login();
       break;
     }
     

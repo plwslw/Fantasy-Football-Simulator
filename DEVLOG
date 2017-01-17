@@ -38,3 +38,8 @@
 		the user interface is not displayed client-side, is displayed server-side (!!!)
 
 	 Most of my time was devoted to fixing the syntax and compiler errors, only made minor progress with actual new code
+
+1/17/17, 3:33 PM: prompt is working on school machine, creates users.csv
+	      	  issues with writing to users.csv
+		  will work on piping input and output from fserver
+		  - Julius
