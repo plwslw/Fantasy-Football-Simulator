@@ -11,9 +11,12 @@
 #include <ctype.h>
 
 #include "fserver.h" // needed for user declaration
+#include "pipe_networking.h"
 
 int errorCheck(int x);
-int display(char* buffer, int input);
+//int display(char* buffer, int input);
+int display(char* buffer);
+char displayCheck();
 char* serverGetInput(int bytes);
 char* getUsername();
 char* getPassword();
