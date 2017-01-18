@@ -13,7 +13,7 @@
 #include "fserver.h" // needed for user declaration
 
 int errorCheck(int x);
-int display(int in, int out, char* buffer);
+int display(char* buffer, int input);
 char* getUsername();
 char* getPassword();
 void createAccount();

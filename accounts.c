@@ -9,9 +9,18 @@ int errorCheck(int x){
   }
 }
 
-int display(int in, int out, char* buffer){
-  write(out, buffer, strlen(buffer));
-  char* check; // not finished - Julius
+int display(char* buffer, int input){
+  int out = pipeout;
+  int in = pipein;
+  write(out, input, sizeof(input)); // whether or not client runs fgets for input
+  write(out, buffer, strlen(buffer)); // string that is displayed
+  char check;
+  read(in, &check, sizeof(char)); // error check
+  if(!check){
+    printf("An error occured: display input incorrect\n");
+    display("An error occured: display input incorrect\n",0);
+    exit(0);
+  }
 }
 
 char* getInput(){
