@@ -1,11 +1,18 @@
 #include "accounts.h"
 
+int pipein, pipeout;
+
 int errorCheck(int x){
   if (x == -1){
     printf("An error occured: [%s]\n",strerror(errno));
     exit(0);
   }
-}   
+}
+
+int display(int in, int out, char* buffer){
+  write(out, buffer, strlen(buffer));
+  char* check; // not finished - Julius
+}
 
 char* getInput(){
   char* input = (char*)malloc(32);
@@ -114,7 +121,10 @@ user* login(){
   }
 }
 
-void greeting(){
+void greeting(int in, int out){
+  pipein = in;
+  pipeout = out;
+  
   printf("Welcome to our project. \n");
 
   while(1){
