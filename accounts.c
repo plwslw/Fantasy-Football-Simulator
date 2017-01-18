@@ -1,6 +1,7 @@
 #include "accounts.h"
 
-int pipein, pipeout;
+int pipein = 0;
+int pipeout = 0;
 
 int errorCheck(int x){
   if (x == -1){
@@ -21,12 +22,15 @@ int display(char* buffer, int input){
     display("An error occured: display input incorrect\n",0);
     exit(0);
   }
+
+  return check;
 }
 
-char* getInput(){
-  char* input = (char*)malloc(32);
-  fgets(input, sizeof(input), stdin); // includes newline must remove
-  strtok(input,"\n");
+char* getInput(int bytes){
+  char* input = (char*)malloc(bytes);
+  //fgets(input, sizeof(input), stdin); // includes newline must remove
+  //strtok(input,"\n");
+  read(input, pipein, bytes);
   return input;
 }
 
@@ -35,10 +39,10 @@ void createAccount(){
   char* password;
   while(1){
     printf("\n enter a username of at most 32 characters: ");
-    username = getInput();
+    username = getInput(32);
     
     printf("\n enter a password of at most 32 characters: ");    
-    password = getInput();
+    password = getInput(32);
     
     if (strlen(username) == 0 || strlen(password) == 0){
       printf("\nYour username or password was empty\n");
@@ -93,10 +97,10 @@ int check_repeated_username(char * name){
 user* login(){
   while(1){
     printf("\nEnter your username: ");
-    char* username = getInput();
+    char* username = getInput(32);
 
     printf("\nEnter your password: ");    
-    char* password = getInput();
+    char* password = getInput(32);
 
     //check if username exist and if username matches the password
     // dont use error check, fopen returns NULL on fail
