@@ -1,2 +1,2 @@
-int display(char* buffer, int input);
+int display();
 char* getInput(int bytes);

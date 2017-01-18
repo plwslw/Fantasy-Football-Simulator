@@ -13,7 +13,7 @@ int errorCheck(int x){
 int display(char* buffer, int input){
   int out = pipeout;
   int in = pipein;
-  write(out, input, sizeof(input)); // whether or not client runs fgets for input
+  write(out, &input, sizeof(input)); // whether or not client runs fgets for input
   write(out, buffer, strlen(buffer)); // string that is displayed
   char check;
   read(in, &check, sizeof(char)); // error check
@@ -26,7 +26,7 @@ int display(char* buffer, int input){
   return check;
 }
 
-char* getInput(int bytes){
+char* serverGetInput(int bytes){
   char* input = (char*)malloc(bytes);
   //fgets(input, sizeof(input), stdin); // includes newline must remove
   //strtok(input,"\n");
@@ -39,10 +39,10 @@ void createAccount(){
   char* password;
   while(1){
     printf("\n enter a username of at most 32 characters: ");
-    username = getInput(32);
+    username = serverGetInput(32);
     
     printf("\n enter a password of at most 32 characters: ");    
-    password = getInput(32);
+    password = serverGetInput(32);
     
     if (strlen(username) == 0 || strlen(password) == 0){
       printf("\nYour username or password was empty\n");
@@ -74,16 +74,12 @@ void createUser(char* username, char* password){
 //Returns 1 if username is already in use, 0 otherwise
 int check_repeated_username(char * name){
   // dont use error check, fopen returns NULL on fail
-  FILE* file = fopen("users.csv", "a+");
+  FILE* file = fopen("users.csv", "w+");
   if(!file){
     printf("An error occured: users.csv cannot be opened\n");
     createAccount();
   }
-  fseek(file, 0L, SEEK_END);
-  int size = (int)ftell(file);
-  rewind(file);
-  char* users;
-  fgets(users, size, file);
+  char* users = readFile(file);
   char* line = strsep(&users,"\n");
   while(line){
     char* usedName = strsep(&line, ",");
@@ -97,10 +93,10 @@ int check_repeated_username(char * name){
 user* login(){
   while(1){
     printf("\nEnter your username: ");
-    char* username = getInput(32);
+    char* username = serverGetInput(32);
 
     printf("\nEnter your password: ");    
-    char* password = getInput(32);
+    char* password = serverGetInput(32);
 
     //check if username exist and if username matches the password
     // dont use error check, fopen returns NULL on fail
@@ -109,19 +105,16 @@ user* login(){
       printf("An error occured: users.csv cannot be opened\n");
       createAccount();
     }
-    fseek(file, 0L, SEEK_END);
-    int size = (int)ftell(file);
-    rewind(file);
-    char* users;
-    fgets(users, size, file);
+    char* users = readFile(file);
     char* line = strsep(&users,"\n");
+
     while(line){
       char* curName = strsep(&line, ",");
       if (!strcmp(curName, username)){
 	if (!strcmp( password, strsep(&line, ","))){
-	  printf("\n\nmade it\n\n");
-	  exit(0);
-	  //login. Need to return a user struct
+	  printf("\n\nLog in successful.");
+	  //exit(0);
+	  return makeUserStruct(line);
 	}
 	else{
 	  printf("Username and password do not match");
@@ -132,6 +125,20 @@ user* login(){
       char* line = strsep(&users,"\n");
     }
   }
+}
+
+user* makeUserStruct(char *line){
+  user* user;
+  return user;
+}
+
+char* readFile(FILE* file){
+    errorCheck( fseek(file, 0L, SEEK_END));
+    int size = (int)ftell(file);
+    rewind(file);
+    char* users;
+    fgets(users, size, file);
+    return users;
 }
 
 void greeting(int in, int out){

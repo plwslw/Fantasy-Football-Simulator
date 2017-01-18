@@ -34,6 +34,7 @@ char* getInput(int bytes){
   return input;
 }
 
+/*no main!
 int main() {
 
   int to_server, from_server;
@@ -45,17 +46,18 @@ int main() {
 
   while(1){
     
-    /* read( from_server, buffer, sizeof(buffer) ); */
-    /* printf( "received: %s\n", buffer ); */
+    /* read( from_server, buffer, sizeof(buffer) ); 
+    /* printf( "received: %s\n", buffer ); 
     
-    /* printf("enter message: "); */
-    /* fgets( buffer, sizeof(buffer), stdin ); */
-    /* char *p = strchr(buffer, '\n'); */
-    /* *p = 0; */
+    /* printf("enter message: "); 
+    /* fgets( buffer, sizeof(buffer), stdin ); 
+    /* char *p = strchr(buffer, '\n'); 
+    /* *p = 0; 
     
-    /* write( to_server, buffer, sizeof(buffer) ); */
+    /* write( to_server, buffer, sizeof(buffer) ); 
     
   }
   
   return 0;
 }
+*/

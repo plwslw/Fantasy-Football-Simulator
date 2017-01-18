@@ -25,7 +25,7 @@ int main() {
 }
 
 void sub_server( int from_client, int to_client ) {
-  greeting();
+  greeting(from_client, to_client);
 
   
 }
