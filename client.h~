@@ -1,1 +1,0 @@
-int display(char* buffer, int input);

@@ -3,12 +3,15 @@
 int pipein = 0;
 int pipeout = 0;
 
-void display(){
+int display(){
+  int input;
+  read(pipein, &input, sizeof(input));
   char buffer[MESSAGE_BUFFER_SIZE];
   char check = read(pipein, buffer, sizeof(buffer));
   check++; //0 -> 1
   printf("[Recieved from server]: %s", buffer);
   write(pipeout, &check, sizeof(&check));
+  return input;;
 }
 
 void writeToServer(){
@@ -32,7 +35,7 @@ int main() {
   pipeout = to_server;
 
   while(1){
-    display();
+    while(display());
     writeToServer();
   }
   

@@ -14,8 +14,7 @@
 #include "pipe_networking.h"
 
 int errorCheck(int x);
-//int display(char* buffer, int input);
-int display(char* buffer);
+int display(char* buffer, int input); //1 on display again. 0 on recieve input
 char displayCheck();
 char* serverGetInput(int bytes);
 char* getUsername();

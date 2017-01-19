@@ -10,11 +10,15 @@ int errorCheck(int x){
   }
 }
 
-int display(char *buffer){
-  write(pipeout, buffer, sizeof(buffer));
+//1 on telling client to wait for more input
+//0 to ask for response.
+int display(char *buffer, int input){
+  write(pipeout, &input, sizeof(input));
+  write(pipeout, buffer, strlen(buffer));
+  printf("[Sent to client]: %s", buffer);
   if (!displayCheck()){
     printf("An error occured: display input incorrect\n");
-    display("An error occured: display input incorrect\n");
+    display("An error occured: display input incorrect\n", 1);
     exit(0);
   }
 }
@@ -22,56 +26,47 @@ int display(char *buffer){
 char displayCheck(){
   return *serverGetInput(1);//Client returns 0 on failure
 }
-/*
-int display(char* buffer, int input){
-    int out = pipeout;
-    int in = pipein;
-    write(out, &input, sizeof(input)); // whether or not client runs fgets for input
-    write(out, buffer, strlen(buffer)); // string that is displayed
-    char check;
-    read(in, &check, sizeof(char)); // error check
-    if(!check){
-    printf("An error occured: display input incorrect\n");
-    display("An error occured: display input incorrect\n",0);
-    exit(0);
+
+char* serverGetInput(int bytes){
+  char* input = (char*)malloc(bytes);
+  read(pipein, input, bytes);
+  return input;
+}
+
+char* getUsername(){
+  return serverGetInput(32);
+}
+
+char* getPassword(){
+  return serverGetInput(32);
+}
+
+void createAccount(){
+  char* username;
+  char* password;
+  while(1){
+    display("\n enter a username of at most 32 characters: ", 0);
+    username = serverGetInput(32);
+    
+    display("\n enter a password of at most 32 characters: ", 0);    
+    password = serverGetInput(32);
+    
+    if (strlen(username) == 0 || strlen(password) == 0){
+      display("\nYour username or password was empty\n", 1);
+      continue;
     }
 
-    return check;
+    if (check_repeated_username(username)){
+      display("Your username is already in use. Pick a different one\n", 1);
+      continue;
     }
-  */
-
-  char* serverGetInput(int bytes){
-    char* input = (char*)malloc(bytes);
-    read(pipein, input, bytes);
-    return input;
+    
+    break;
   }
 
-  void createAccount(){
-    char* username;
-    char* password;
-    while(1){
-      printf("\n enter a username of at most 32 characters: ");
-      username = serverGetInput(32);
-    
-      printf("\n enter a password of at most 32 characters: ");    
-      password = serverGetInput(32);
-    
-      if (strlen(username) == 0 || strlen(password) == 0){
-	printf("\nYour username or password was empty\n");
-	continue;
-      }
+  createUser(username, password);
 
-      if (check_repeated_username(username)){
-	printf("\nYour username is already in use. Pick a different one\n");
-	continue;
-      }
-    
-      break;
-    }
-
-    createUser(username, password);
-
-  }
+}
 
   void createUser(char* username, char* password){
     int fd = open("users.csv", O_WRONLY, O_APPEND);
@@ -104,10 +99,10 @@ int display(char* buffer, int input){
   //returns a struct of the user
   user* login(){
     while(1){
-      printf("\nEnter your username: ");
+      display("\nEnter your username: ", 0);
       char* username = serverGetInput(32);
 
-      printf("\nEnter your password: ");    
+      display("\nEnter your password: ", 0);    
       char* password = serverGetInput(32);
 
       //check if username exist and if username matches the password
@@ -124,12 +119,12 @@ int display(char* buffer, int input){
 	char* curName = strsep(&line, ",");
 	if (!strcmp(curName, username)){
 	  if (!strcmp( password, strsep(&line, ","))){
-	    printf("\n\nLog in successful.");
+	    display("\n\nLog in successful.", 1);
 	    //exit(0);
 	    return makeUserStruct(line);
 	  }
 	  else{
-	    printf("Username and password do not match");
+	    display("Username and password do not match",1);
 	    login();
 	    break;
 	  }
@@ -159,12 +154,11 @@ int display(char* buffer, int input){
     pipeout = out;
   
     //display("Welcome to our project. \n", 0);
-    display("Welcome to our project. \n");
+    display("Welcome to our project. \n",1);
 
     while(1){
-      char* s;
-      printf("Do you already have an account. (y/n): ");
-      fgets(s, 10, stdin);
+      display("Do you already have an account. (y/n): ", 0);
+      char* s =serverGetInput(10);
       lowercase(s);
       if (!strncmp(s,"y",1) | !strncmp(s,"yes",3)){
 	login();

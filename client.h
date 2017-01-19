@@ -9,7 +9,7 @@
 
 #include "pipe_networking.h"
 
-void display();
+int display();
 void writeToServer();
 
 #endif
