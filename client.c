@@ -8,7 +8,7 @@ int display(){
   read(pipein, &input, sizeof(input));
   char buffer[MESSAGE_BUFFER_SIZE];
   char check = read(pipein, buffer, sizeof(buffer));
-  check++; //0 -> 1
+  check++; //-1 -> 0
   printf("[Recieved from server]: %s", buffer);
   write(pipeout, &check, sizeof(&check));
   return input;;

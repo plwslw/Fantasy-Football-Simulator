@@ -18,8 +18,8 @@ int display(char *buffer, int input){
   printf("[Sent to client]: %s", buffer);
   if (!displayCheck()){
     printf("An error occured: display input incorrect\n");
-    display("An error occured: display input incorrect\n", 1);
-    exit(0);
+    //display("An error occured: display input incorrect\n", 1);
+    kill(getpid(), 9);
   }
 }
 
@@ -30,6 +30,7 @@ char displayCheck(){
 char* serverGetInput(int bytes){
   char* input = (char*)malloc(bytes);
   read(pipein, input, bytes);
+  printf("\n[Recieved from client]: %s\n", input);
   return input;
 }
 
@@ -68,119 +69,119 @@ void createAccount(){
 
 }
 
-  void createUser(char* username, char* password){
-    int fd = open("users.csv", O_WRONLY, O_APPEND);
-    errorCheck(fd);
-    errorCheck (write(fd, username, strlen(username)));
-    errorCheck (write(fd, ",", 1));
-    errorCheck (write(fd, password, strlen(password)));
-    errorCheck (write(fd, "\n", strlen("\n")));
-    errorCheck (close(fd));
-  }
+void createUser(char* username, char* password){
+  int fd = open("users.csv", O_WRONLY, O_APPEND);
+  errorCheck(fd);
+  errorCheck (write(fd, username, strlen(username)));
+  errorCheck (write(fd, ",", 1));
+  errorCheck (write(fd, password, strlen(password)));
+  errorCheck (write(fd, "\n", strlen("\n")));
+  errorCheck (close(fd));
+}
 
   //Returns 1 if username is already in use, 0 otherwise
-  int check_repeated_username(char * name){
+int check_repeated_username(char * name){
+  // dont use error check, fopen returns NULL on fail
+  FILE* file = fopen("users.csv", "w+");
+  if(!file){
+    printf("An error occured: users.csv cannot be opened\n");
+    createAccount();
+  }
+  char* users = readFile(file);
+  char* line = strsep(&users,"\n");
+  while(line){
+    char* usedName = strsep(&line, ",");
+    if (!strcmp(usedName, name)) return 1;
+    char* line = strsep(&users,"\n");
+  }
+  return 0;
+}  
+
+  //returns a struct of the user
+user* login(){
+  while(1){
+    display("\nEnter your username: ", 0);
+    char* username = serverGetInput(32);
+
+    display("\nEnter your password: ", 0);    
+    char* password = serverGetInput(32);
+
+    //check if username exist and if username matches the password
     // dont use error check, fopen returns NULL on fail
-    FILE* file = fopen("users.csv", "w+");
+    FILE* file = fopen("users.csv", "a+");
     if(!file){
       printf("An error occured: users.csv cannot be opened\n");
       createAccount();
     }
     char* users = readFile(file);
     char* line = strsep(&users,"\n");
+
     while(line){
-      char* usedName = strsep(&line, ",");
-      if (!strcmp(usedName, name)) return 1;
-      char* line = strsep(&users,"\n");
-    }
-    return 0;
-  }  
-
-  //returns a struct of the user
-  user* login(){
-    while(1){
-      display("\nEnter your username: ", 0);
-      char* username = serverGetInput(32);
-
-      display("\nEnter your password: ", 0);    
-      char* password = serverGetInput(32);
-
-      //check if username exist and if username matches the password
-      // dont use error check, fopen returns NULL on fail
-      FILE* file = fopen("users.csv", "a+");
-      if(!file){
-	printf("An error occured: users.csv cannot be opened\n");
-	createAccount();
-      }
-      char* users = readFile(file);
-      char* line = strsep(&users,"\n");
-
-      while(line){
-	char* curName = strsep(&line, ",");
-	if (!strcmp(curName, username)){
-	  if (!strcmp( password, strsep(&line, ","))){
-	    display("\n\nLog in successful.", 1);
-	    //exit(0);
-	    return makeUserStruct(line);
-	  }
-	  else{
-	    display("Username and password do not match",1);
-	    login();
-	    break;
-	  }
+      char* curName = strsep(&line, ",");
+      if (!strcmp(curName, username)){
+	if (!strcmp( password, strsep(&line, ","))){
+	  display("\n\nLog in successful.", 1);
+	  //exit(0);
+	  return makeUserStruct(line);
 	}
-	char* line = strsep(&users,"\n");
+	else{
+	  display("Username and password do not match",1);
+	  login();
+	  break;
+	}
       }
+      char* line = strsep(&users,"\n");
     }
   }
+}
 
-  user* makeUserStruct(char *line){
-    user* user;
-    return user;
-  }
+user* makeUserStruct(char *line){
+  user* user;
+  return user;
+}
 
-  char* readFile(FILE* file){
-    errorCheck( fseek(file, 0L, SEEK_END));
-    int size = (int)ftell(file);
-    rewind(file);
-    char* users;
-    fgets(users, size, file);
-    return users;
-  }
+char* readFile(FILE* file){
+  errorCheck( fseek(file, 0L, SEEK_END));
+  int size = (int)ftell(file);
+  rewind(file);
+  char* users;
+  fgets(users, size, file);
+  return users;
+}
 
-  void greeting(int in, int out){
-    //printf("greeting\n");
-    pipein = in;
-    pipeout = out;
+void greeting(int in, int out){
+  //printf("greeting\n");
+  pipein = in;
+  pipeout = out;
   
-    //display("Welcome to our project. \n", 0);
-    display("Welcome to our project. \n",1);
+  //display("Welcome to our project. \n", 0);
+  display("Welcome to our project. \n",1);
 
-    while(1){
-      display("Do you already have an account. (y/n): ", 0);
-      char* s =serverGetInput(10);
-      lowercase(s);
-      if (!strncmp(s,"y",1) | !strncmp(s,"yes",3)){
-	login();
-	break;
-      }
-
-      else if (!strncmp(s,"n",1) | !strncmp(s,"no",2)){
-	createAccount();
-	login();
-	break;
-      }
-    
-      else{
-	printf("not valid input");
-	continue;
-      }
-    
+  while(1){
+    display("Do you already have an account. (y/n): ", 0);
+    char* s =serverGetInput(10);
+    lowercase(s);
+    if (!strncmp(s,"y",1) | !strncmp(s,"yes",3)){
+      login();
+      break;
     }
 
+    else if (!strncmp(s,"n",1) | !strncmp(s,"no",2)){
+      createAccount();
+      login();
+      break;
+    }
+    
+    else{
+      printf("not valid input");
+      continue;
+    }
+    
   }
 
-  void lowercase(char *p){
-    for( ; *p; ++p) *p = tolower(*p); //This line from StackOverflow
-  }
+}
+
+void lowercase(char *p){
+  for( ; *p; ++p) *p = tolower(*p); //This line from StackOverflow
+}
 
