@@ -12,7 +12,8 @@ int errorCheck(int x){
 
 //1 on telling client to wait for more input
 //0 to ask for response.
-int display(char *buffer, int input){
+void display(char *buffer, int input){
+  //printf("\n<input> %d", input);
   write(pipeout, &input, sizeof(input));
   write(pipeout, buffer, strlen(buffer));
   printf("[Sent to client]: %s", buffer);
@@ -23,15 +24,28 @@ int display(char *buffer, int input){
   }
 }
 
-char displayCheck(){
-  return *serverGetInput(1);//Client returns 0 on failure
+int displayCheck(){
+  int s = serverGetCheck(sizeof(int));//Client returns 0 on failure
+  return s;
 }
 
 char* serverGetInput(int bytes){
-  char* input = (char*)malloc(bytes);
+  char input [bytes];
+  printf("\nreieving %s", input);
   read(pipein, input, bytes);
   printf("\n[Recieved from client]: %s\n", input);
-  return input;
+  //free (input);
+  char * send  = (char*)malloc(bytes);
+  strcpy(send, input);
+  return send;
+}
+
+int serverGetCheck(){
+  int check;
+  read(pipein, &check, sizeof(check));
+  printf("\ncheck as integer: %d", check);
+  printf("\ncheck as sring: %s", check);
+  return check;
 }
 
 char* getUsername(){

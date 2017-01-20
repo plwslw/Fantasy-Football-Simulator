@@ -14,9 +14,10 @@
 #include "pipe_networking.h"
 
 int errorCheck(int x);
-int display(char* buffer, int input); //1 on display again. 0 on recieve input
-char displayCheck();
+void display(char *buffer, int input); //1 on display again. 0 on recieve input
+int displayCheck();
 char* serverGetInput(int bytes);
+int serverGetCheck();
 char* getUsername();
 char* getPassword();
 void createAccount();
