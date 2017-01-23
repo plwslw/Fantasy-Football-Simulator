@@ -9,14 +9,14 @@ int display(){
   read(pipein, &input, sizeof(input));
   printf("\nfinished reading");
   char buffer[MESSAGE_BUFFER_SIZE];
-  int check = read(pipein, buffer, sizeof(buffer));
-  int check1 = 1;
-  if (check == -1) check1 = 0;
+  read(pipein, buffer, sizeof(buffer));
+  //int check1 = 1;
+  //if (check == -1) check1 = 0;
   printf("[Recieved from server]: %s", buffer);
-  write(pipeout, &check1, sizeof(check1));
+  //write(pipeout, &check1, sizeof(check1));
   printf("%d", input);
   strcpy(buffer, "");
-  printf("\n After I am fing dead: %s", buffer);
+  //printf("\n After I am fing dead: %s", buffer);
   return input;
 }
 
@@ -46,5 +46,14 @@ int main() {
   }
   
   return 0;
+
+  //*/
+  /*
+
+  printf("!!!!!!!!!");
+  display();
+  writeToServer();
+  
+  */
 }
 

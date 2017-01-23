@@ -17,22 +17,26 @@ void display(char *buffer, int input){
   write(pipeout, &input, sizeof(input));
   write(pipeout, buffer, strlen(buffer));
   printf("[Sent to client]: %s", buffer);
+  /*
   if (!displayCheck()){
     printf("An error occured: display input incorrect\n");
     //display("An error occured: display input incorrect\n", 1);
     kill(getpid(), 9);
   }
+  */
 }
 
+/*
 int displayCheck(){
   int s = serverGetCheck(sizeof(int));//Client returns 0 on failure
   return s;
 }
+*/
 
 char* serverGetInput(int bytes){
   char input [bytes];
   printf("\nreieving %s", input);
-  read(pipein, input, bytes);
+  read(pipein, input, sizeof(input));
   printf("\n[Recieved from client]: %s\n", input);
   //free (input);
   char * send  = (char*)malloc(bytes);
@@ -40,6 +44,7 @@ char* serverGetInput(int bytes){
   return send;
 }
 
+/*
 int serverGetCheck(){
   int check;
   read(pipein, &check, sizeof(check));
@@ -47,6 +52,7 @@ int serverGetCheck(){
   printf("\ncheck as sring: %s", check);
   return check;
 }
+*/
 
 char* getUsername(){
   return serverGetInput(32);
@@ -61,10 +67,18 @@ void createAccount(){
   char* password;
   while(1){
     display("\n enter a username of at most 32 characters: ", 0);
-    username = serverGetInput(32);
+    username = getUsername();
     
     display("\n enter a password of at most 32 characters: ", 0);    
-    password = serverGetInput(32);
+    password = getPassword();
+
+    printf("Server recieved: \nusername = %s \npassword = %s", username, password);
+
+    int a = strlen(username);
+    int b = strlen(password);
+    char* ret;
+    sprintf(ret, "Username length = %d \nPassword length = %d", a, b);
+    display(ret, 1);
     
     if (strlen(username) == 0 || strlen(password) == 0){
       display("\nYour username or password was empty\n", 1);
@@ -164,10 +178,11 @@ char* readFile(FILE* file){
 }
 
 void greeting(int in, int out){
+  
   //printf("greeting\n");
   pipein = in;
   pipeout = out;
-  
+
   //display("Welcome to our project. \n", 0);
   display("Welcome to our project. \n",1);
 
@@ -193,6 +208,14 @@ void greeting(int in, int out){
     
   }
 
+  /*
+
+  printf("asdfasdasd");
+  display("Enter a username", 0);
+  char* username = getUsername();
+  printf("username entered: %s", username);
+
+  */
 }
 
 void lowercase(char *p){
