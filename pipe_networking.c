@@ -5,14 +5,14 @@ int client_handshake(int* a){
   mkfifo(name, 0644);
   
   int server = open("pipe1", O_WRONLY);
-  write(server,  name, MESSAGE_BUFFER_SIZE);
+  write(server,  name, sizeof(name));
   
   char buffer[MESSAGE_BUFFER_SIZE];
   int private = open(name, O_RDONLY);
   read(private, buffer, sizeof(buffer));
   remove(name);
-  
-  write(server, "hello", MESSAGE_BUFFER_SIZE);
+
+  write(server, "hello", 6);
   
   *a = server;
   return private;
