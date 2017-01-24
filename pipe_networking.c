@@ -1,6 +1,7 @@
 #include "pipe_networking.h"
 int client_handshake(int* a){
-  char * name;
+  
+  char * name = (char*)malloc(sizeof(char*));
   sprintf( name, "%d", getpid());
   mkfifo(name, 0644);
   
