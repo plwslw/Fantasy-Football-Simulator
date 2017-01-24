@@ -4,10 +4,8 @@ int pipein = 0;
 int pipeout = 0;
 
 int display(){
-  printf("\n display ran");
   int input;
   read(pipein, &input, sizeof(input));
-  printf("\nfinished reading");
   char buffer[MESSAGE_BUFFER_SIZE];
   read(pipein, buffer, sizeof(buffer));
   //int check1 = 1;
@@ -16,7 +14,7 @@ int display(){
   //write(pipeout, &check1, sizeof(check1));
   printf("%d", input);
   strcpy(buffer, "");
-  //printf("\n After I am fing dead: %s", buffer);
+  printf("\nBuffer erased: %s\n", buffer);
   return input;
 }
 

@@ -15,7 +15,7 @@
 int client_handshake(int* a);
 
 int server_handshake(int* a);
-int server_handshake1(char* buffer, int *a);
+int server_handshake1(char* buffer);
 int server_handshake2(char* buffer, int a);
 
 #endif

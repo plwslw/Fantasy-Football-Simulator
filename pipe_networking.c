@@ -1,15 +1,19 @@
 #include "pipe_networking.h"
-
 int client_handshake(int* a){
-  char * name = ".pipe2";
+  char * name;
+  sprintf( name, "%d", getpid());
   mkfifo(name, 0644);
+  
   int server = open("pipe1", O_WRONLY);
-  write(server, name, 7);
+  write(server,  name, MESSAGE_BUFFER_SIZE);
+  
   char buffer[MESSAGE_BUFFER_SIZE];
   int private = open(name, O_RDONLY);
-  read(private, buffer, 3);
+  read(private, buffer, sizeof(buffer));
   remove(name);
-  write(server, "hello", 6);
+  
+  write(server, "hello", MESSAGE_BUFFER_SIZE);
+  
   *a = server;
   return private;
 }
@@ -27,19 +31,19 @@ int server_handshake(int* a){
   return private;
 }
 
-int server_handshake1(char* buffer, int* a){
+int server_handshake1(char* buffer){
   mkfifo("pipe1", 0644);
   int client = open("pipe1", O_RDONLY);
-  *a = client;
-  read(client, buffer, 7);
+  read(client, buffer, MESSAGE_BUFFER_SIZE);
   remove("pipe1");
-  return 0;
+  return client;
 }
 
 
 int server_handshake2(char* buffer, int client){
   int private = open(buffer, O_WRONLY);
-  write(private, "hi", 3);
-  read(client, buffer, 6);
+  strncpy (buffer, "hi", MESSAGE_BUFFER_SIZE);
+  write(private, buffer, MESSAGE_BUFFER_SIZE);
+  read(client, buffer, MESSAGE_BUFFER_SIZE);
   return private;
 }
