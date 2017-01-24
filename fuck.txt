@@ -1,0 +1,1053 @@
+[Sent to client]: Welcome to our project. 
+[Sent to client]: Do you already have an account. (y/n): 
+reieving ð@
+[Recieved from client]: n
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: eady have an account. (y/n): 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving eady have an account. (y/n): 
+[Recieved from client]: 
+Server recieved: 
+username = eady have an account. (y/n):  
+password = [Sent to client]: Username length = 29 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server recieved: 
+username =  
+password = [Sent to client]: Username length = 0 
+Password length = 0[Sent to client]: 
+Your username or password was empty
+[Sent to client]: 
+ enter a username of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+[Sent to client]: 
+ enter a password of at most 32 characters: 
+reieving 
+[Recieved from client]: 
+Server
