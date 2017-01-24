@@ -35,6 +35,8 @@ int main() {
   int to_server, from_server;
 
   from_server = client_handshake( &to_server );
+
+  printf("handshake finished");
   pipein = from_server;
   pipeout = to_server;
 
