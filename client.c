@@ -4,6 +4,7 @@ int pipein, pipeout;
 
 int display(){
   int input;
+  sleep(1);
   read(pipein, &input, sizeof(input));
   char buffer[MESSAGE_BUFFER_SIZE];
   sleep(1);
@@ -38,7 +39,7 @@ int main() {
   
   //printf("handshake finished");
 
-  //printf("from_server: %d \nto_server:%d", from_server, to_server);
+  printf("from_server:%d\nto_server:%d\n", from_server, to_server);
   
   pipein = from_server;
   pipeout = to_server;

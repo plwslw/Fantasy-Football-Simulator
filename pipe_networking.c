@@ -45,6 +45,7 @@ int server_handshake2(char* buffer, int client){
   int private = open(buffer, O_WRONLY);
   strncpy (buffer, "hi", MESSAGE_BUFFER_SIZE);
   write(private, buffer, MESSAGE_BUFFER_SIZE);
+  printf("pass\n");
   read(client, buffer, MESSAGE_BUFFER_SIZE);
   return private;
 }
