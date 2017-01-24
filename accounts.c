@@ -1,7 +1,6 @@
 #include "accounts.h"
 
-int pipein = 0;
-int pipeout = 0;
+int pipein, pipeout;
 
 int errorCheck(int x){
   if (x == -1){

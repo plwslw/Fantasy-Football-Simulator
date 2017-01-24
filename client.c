@@ -1,7 +1,6 @@
 #include "client.h"
 
-int pipein = 0;
-int pipeout = 0;
+int pipein, pipeout;
 
 int display(){
   int input;
@@ -35,8 +34,11 @@ int main() {
   int to_server, from_server;
 
   from_server = client_handshake( &to_server );
-
+  
   printf("handshake finished");
+
+  printf("from_server: %d \nto_server:%d", from_server, to_server);
+  
   pipein = from_server;
   pipeout = to_server;
 
