@@ -1,4 +1,4 @@
-#include "fserver.h"
+#include "accounts.h"
 
 int main() {
   
@@ -25,8 +25,7 @@ int main() {
 }
 
 void sub_server( int from_client, int to_client ) {
-  open_account_files();
-  greeting();
+  greeting(from_client, to_client);
 
   
 }
