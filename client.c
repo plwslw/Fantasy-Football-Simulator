@@ -6,14 +6,15 @@ int display(){
   int input;
   read(pipein, &input, sizeof(input));
   char buffer[MESSAGE_BUFFER_SIZE];
+  sleep(1);
   read(pipein, buffer, sizeof(buffer));
   //int check1 = 1;
   //if (check == -1) check1 = 0;
   printf("[Recieved from server]: %s", buffer);
   //write(pipeout, &check1, sizeof(check1));
-  printf("%d", input);
-  strcpy(buffer, "");
-  printf("\nBuffer erased: %s\n", buffer);
+  printf("%d\n", input);
+  //strcpy(buffer, "");
+  //printf("\nBuffer erased: %s\n", buffer);
   return input;
 }
 
@@ -35,15 +36,16 @@ int main() {
 
   from_server = client_handshake( &to_server );
   
-  printf("handshake finished");
+  //printf("handshake finished");
 
-  printf("from_server: %d \nto_server:%d", from_server, to_server);
+  //printf("from_server: %d \nto_server:%d", from_server, to_server);
   
   pipein = from_server;
   pipeout = to_server;
 
   while(1){
     while(display());
+    printf("pass\n");
     writeToServer();
   }
   

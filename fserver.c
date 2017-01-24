@@ -26,7 +26,7 @@ int main() {
 }
 
 void sub_server( int from_client, int to_client ) {
-  printf("from_client: %d \nto_client:%d", from_client, to_client);
+  //printf("from_client: %d \nto_client:%d", from_client, to_client);
   greeting(from_client, to_client);
 
   
