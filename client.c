@@ -4,11 +4,11 @@ int pipein, pipeout;
 
 int display(){
   int input;
-  sleep(1);
+  //sleep(1);
   read(pipein, &input, sizeof(input));
-  char buffer[MESSAGE_BUFFER_SIZE];
-  sleep(1);
-  read(pipein, buffer, sizeof(buffer));
+  char* buffer;
+  //sleep(1);
+  read(pipein, buffer, MESSAGE_BUFFER_SIZE);
   //int check1 = 1;
   //if (check == -1) check1 = 0;
   printf("[Recieved from server]: %s", buffer);

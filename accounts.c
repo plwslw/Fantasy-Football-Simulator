@@ -13,6 +13,7 @@ int errorCheck(int x){
 //0 to ask for response.
 void display(char *buffer, int input){
   //printf("\n<input> %d", input);
+  sleep(1);
   write(pipeout, &input, sizeof(input));
   write(pipeout, buffer, strlen(buffer));
   printf("[Sent to client]: %s", buffer);
@@ -33,9 +34,9 @@ int displayCheck(){
 */
 
 char* serverGetInput(int bytes){
-  char input [bytes];
+  char* input;
   printf("\nreieving %s", input);
-  read(pipein, input, sizeof(input));
+  read(pipein, input, bytes);
   printf("\n[Recieved from client]: %s\n", input);
   //free (input);
   char * send  = (char*)malloc(bytes);
@@ -77,7 +78,7 @@ void createAccount(){
     int b = strlen(password);
     char* ret;
     sprintf(ret, "Username length = %d \nPassword length = %d", a, b);
-    display(ret, 1);
+    //display(ret, 1);
     
     if (strlen(username) == 0 || strlen(password) == 0){
       display("\nYour username or password was empty\n", 1);
